@@ -1,4 +1,8 @@
- h1{color: red;}
+*{
+    padding: 0px;
+    margin:0px;
+}
+h1{color: red;}
  body{
      margin:0;
      background:#EFEFEF;
@@ -78,16 +82,49 @@ a{
     margin-left:auto;
     margin-right:auto;
 }
+.userCard .pictureAndText{
+    padding:0 50px;
+}
+.userCard .picture{
+    float:left;
+}
+.userCard .text{
+    float:left;
+    padding-left:20px;
+}
 .userCard .welcome{
     background:#e6686a;
     color: #EFEFEF;
     display: inline-block;
     padding:5px 5px;
+    position:relative;
+    margin-top:10px;
 }
-.user .welcome .triangle{
-    display: inline-block;
-    border:50px solid transparent;
+.userCard .welcome .triangle{
+    display: block;
+    border:12px solid transparent;
     width:0px;
-    border-left-color:red;
+    border-left-color:#E6686A;
     border-top-width:0px;
+    top:100%;
+    left:4px;
+    position:absolute;
+}
+.userCard .text>h1{
+    margin-top:26px;
+    margin-bottom:17px;
+}
+.userCard .text>hr{
+    height:0px;
+    border:none;
+    border:1px solid #dedede;
+    margin:10px ;
+}
+.userCard .text>dl>dd{
+    float:left;
+    width:30%;
+}
+.userCard .text>dl>dt{
+    float:left;
+    width:70px;
 }
