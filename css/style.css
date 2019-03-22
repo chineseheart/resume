@@ -252,6 +252,7 @@ section.portfolio>nav>ol{
     display: inline-block;
     vertical-align: top;
     text-align:center;
+    padding-bottom:20px;
 }
 section.portfolio>nav>ol>li{
     float: left;
@@ -288,4 +289,12 @@ section.portfolio>nav .bar.state-2 .bar-inner{
 section.portfolio>nav .bar.state-3 .bar-inner{
     margin-left:180px;
     width:48%;
+}
+section.portfolio .works{
+    position: relative;
+    margin:30px 0;
+}
+section.portfolio .works .small,
+section.portfolio .works .big{
+    position: absolute;
 }
