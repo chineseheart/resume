@@ -6,19 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dsocument</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="    //at.alicdn.com/t/font_1091123_sfjj972p7qf.js
-    ">    </script>
-    <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
-    </style>
-</head>
+    <script src="    //at.alicdn.com/t/font_1091123_sfjj972p7qf.js">    </script>
+</head> 
 <body>
-    <!--顶部导航快-->
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
+    <!--顶部导航块-->
     <div class="topNavBar">
         <div class="topNavBar-inner  clearfix">
             <a class="logo" href="#" alt="logo">
@@ -171,5 +165,9 @@
             </div>
         </div>
     </section>
+    <script>
+        siteWelcome.classList.remove('active')
+    </script>
+    
 </body>
 </html>
