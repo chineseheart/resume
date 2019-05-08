@@ -13,7 +13,7 @@
         <div class="loading"></div>
     </div>
     <!--顶部导航块-->
-    <div class="topNavBar">
+    <div id='topNavBar' class="topNavBar">
         <div class="topNavBar-inner  clearfix">
             <a class="logo" href="#" alt="logo">
                     <span class="rs">RS</span>
@@ -22,7 +22,7 @@
                 <!--导航条navigation bar-->
                 <nav>
                     <ul class = "clearfix";>
-                        <li><a href="#">about</a></li>
+                        <li><a href="#">ABOUT</a></li>
                         <li><a href="#">SKILLS</a></li>
                         <li><a href="#">PORTFOLIO</a></li>
                         <li><a href="#">EXPERIENCE PRICING</a></li>
@@ -160,13 +160,23 @@
                     <img src="./img/2.jpg" alt="作品2" style="height:238px; width:252px">
 
             </div>
-            <div class="small" style="top:262px; left:542px;">
+            <div claBss="small" style="top:262px; left:542px;">
                     <img src="./img/3.jpg" alt="作品3" style="height:238px; width:252px">
             </div>
         </div>
     </section>
     <script>
-        siteWelcome.classList.remove('active')
+        setTimeout(function(){
+            siteWelcome.classList.remove('active')},2500
+        )
+        window.onscroll = function(xxxx){
+            if(window.scrollY > 0 ){
+                topNavBar.classList.add('sticky')
+                console.log(1)
+            }else{
+                topNavBar.classList.remove('sticky')
+            }
+        }
     </script>
 </body>
 </html>
