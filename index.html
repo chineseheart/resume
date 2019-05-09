@@ -22,11 +22,20 @@
                 <!--导航条navigation bar-->
                 <nav>
                     <ul class = "clearfix";>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">SKILLS</a></li>
+                        <li class="meauTigger"><a href="#">ABOUT</a></li>
+                        <li><a href="#">SKILLS</a><ul class='submeau'>
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul></li>
                         <li><a href="#">PORTFOLIO</a></li>
                         <li><a href="#">EXPERIENCE PRICING</a></li>
-                        <li><a href="#">BLOG</a></li>
+                        <li class="meauTigger"><a href="#">BLOG</a>
+                        <ul class="submeau">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul></li>
                         <li><a href="#">CONTACT</a></li>
                         <li><a href="#">CALENDAR</a></li>
                         <li><a href="#">OTHER</a></li>
@@ -177,6 +186,21 @@
                 topNavBar.classList.remove('sticky')
             }
         }
+        let liTags = document.getElementsByClassName('meauTigger')
+        for(let i=0;i<liTags.length;i++){
+            liTags[i].onmouseenter = function(x){
+            let li = x.currentTarget
+            let brother = li.getElementsByTagName('ul')[0]
+            console.log(brother)
+                brother.classList.add('active')
+            }
+            liTags[i].onmouseleave = function(x){
+                let li = x.currentTarget
+                let brother = li.getElementsByTagName('ul')[0]
+                brother.classList.remove('active')
+            }
+        }
+
     </script>
 </body>
 </html>
