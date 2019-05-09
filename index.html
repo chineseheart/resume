@@ -22,13 +22,13 @@
                 <!--导航条navigation bar-->
                 <nav>
                     <ul class = "clearfix";>
-                        <li class="meauTigger"><a href="#">ABOUT</a></li>
-                        <li><a href="#">SKILLS</a><ul class='submeau'>
+                        <li><a href="#">ABOUT</a></li>
+                        <li class="meauTigger"><a href="#">PORTFOLIO</a><ul class='submeau'>
                             <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
                         </ul></li>
-                        <li><a href="#">PORTFOLIO</a></li>
+                        <li><a href="#">SKILLS</a></li>
                         <li><a href="#">EXPERIENCE PRICING</a></li>
                         <li class="meauTigger"><a href="#">BLOG</a>
                         <ul class="submeau">
@@ -191,12 +191,12 @@
             liTags[i].onmouseenter = function(x){
             let li = x.currentTarget
             let brother = li.getElementsByTagName('ul')[0]
-            console.log(brother)
-                brother.classList.add('active')
+            brother.classList.add('active')
             }
             liTags[i].onmouseleave = function(x){
                 let li = x.currentTarget
                 let brother = li.getElementsByTagName('ul')[0]
+                console.log(brother)
                 brother.classList.remove('active')
             }
         }
