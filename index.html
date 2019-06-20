@@ -57,7 +57,7 @@
 
     <!--最主要的部分-->
     <main>
-        <div class="userCard" id="siteMe">
+        <div data-x class="userCard" id="siteMe">
             <div class="pictureAndText clearfix">
                 <div class="picture"><img src="./img/me3.jpg" width="299" height="347px" alt="头像"></div>
                 <div class="text">
@@ -106,7 +106,7 @@
             技能：html5，css3，JavaScript，node.js，vue，react。
         </p>
     </main>
-    <section class="skills" id="siteSkills">
+    <section data-x class="skills" id="siteSkills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -148,7 +148,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio" id="sitePortfolio">
+    <section data-x class="portfolio" id="sitePortfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -224,7 +224,7 @@
 
 
                 let currentTop = window.scrollY
-                let targetTop = top - 80
+                let targetTop = top - 75
                 let s = targetTop - currentTop
                 let t = Math.abs((s / 100) * 2000)
                 if (t > 2000) t = 2000
@@ -237,9 +237,18 @@
                         window.scrollTo(0, coords.y)
                     })
                     .start();
+            }
+            let specialTags = document.querySelectorAll('[data-x]')
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) { minIndex = i }
+
 
             }
+            console.log('minIndex')
+            console.log(window.scrollY)
 
+            console.log(minIndex)
         }
     </script>
 </body>
