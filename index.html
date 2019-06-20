@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <title>Dsocument</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="    //at.alicdn.com/t/font_1091123_sfjj972p7qf.js">    </script>
-</head> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
+</head>
+
 <body>
     <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
@@ -16,42 +19,45 @@
     <div id='topNavBar' class="topNavBar">
         <div class="topNavBar-inner  clearfix">
             <a class="logo" href="#" alt="logo">
-                    <span class="rs">RS</span>
-                    <span class="card">card</span>
-                </a>
-                <!--导航条navigation bar-->
-                <nav>
-                    <ul class = "clearfix";>
-                        <li ><a href="#siteAbout">ABOUT</a></li>
-                        <li ><a href="#sitePortfolio">PORTFOLIO</a><ul class='submeau'>
+                <span class="rs">RS</span>
+                <span class="card">card</span>
+            </a>
+            <!--导航条navigation bar-->
+            <nav>
+                <ul class="clearfix" ;>
+                    <li><a href="#siteAbout">ABOUT</a></li>
+                    <li><a href="#sitePortfolio">PORTFOLIO</a>
+                        <ul class='submeau'>
                             <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
-                        </ul></li>
-                        <li ><a href="#siteSkills">SKILLS</a></li>
-                        <li ><a href="#siteExperience">EXPERIENCE PRICING</a></li>
-                        <li ><a href="#siteBlog">BLOG</a>
+                        </ul>
+                    </li>
+                    <li><a href="#siteSkills">SKILLS</a></li>
+                    <li><a href="#siteExperience">EXPERIENCE PRICING</a></li>
+                    <li><a href="#siteBlog">BLOG</a>
                         <ul class="submeau">
                             <li>博客1</li>
                             <li>博客2</li>
                             <li>博客3</li>
-                        </ul></li>
-                        <li ><a href="#siteContact">CONTACT</a></li>
-                        <li ><a href="#siteCalendar">CALENDAR</a></li>
-                        <li ><a href="#siteOther">OTHER</a></li>
-                    </ul>
-                </nav>
+                        </ul>
+                    </li>
+                    <li><a href="#siteContact">CONTACT</a></li>
+                    <li><a href="#site">CALENDAR</a></li>
+                    <li><a href="#siteMe">ME</a></li>
+                </ul>
+            </nav>
         </div>
-        
+
     </div>
     <div class="banner">
-    <div class="mask"></div>
+        <div class="mask"></div>
     </div>
 
-    
+
     <!--最主要的部分-->
-    <main >
-        <div class="userCard">
+    <main>
+        <div class="userCard" id="siteMe">
             <div class="pictureAndText clearfix">
                 <div class="picture"><img src="./img/me3.jpg" width="299" height="347px" alt="头像"></div>
                 <div class="text">
@@ -75,30 +81,30 @@
                         <dt>青岛</dt>
                         <dd>手机</dd>
                         <dt>15621419706</dt>
-                        </dl>
-                    </div> 
+                    </dl>
                 </div>
-                <footer class="media" id="siteBlog">
-                    <a  target="_blank"     href="https://github.com/chineseheart">
-                        <svg class="icon" aria-hidden="true">
+            </div>
+            <footer class="media" id="siteBlog">
+                <a target="_blank" href="https://github.com/chineseheart">
+                    <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-github"></use>
-                        </svg>
-                    </a>
-                    <a target="_blank" href="https://juejin.im/user/5c1328e86fb9a049ec6af418/posts">
-                        <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-juejin"></use>
-                                </svg>
-                    </a>
-                </footer>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://juejin.im/user/5c1328e86fb9a049ec6af418/posts">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-juejin"></use>
+                    </svg>
+                </a>
+            </footer>
         </div>
-    <p class="downloadResume-warpper" >
-        <a href="./2019简历.pdf" class="downloadResume" target="_blank" download>下 载 P D F 简 历</a>
-    </p>
-        
-    <p class="selfIntroduction" id="siteAbout">
-        马骏康，初级前端开发工程师，青岛科技大学2021年毕业本科生。<br>
-        技能：html5，css3，JavaScript，node.js，vue，react。
-    </p>
+        <p class="downloadResume-warpper" id="siteContact">
+            <a href="./2019简历.pdf" class="downloadResume" target="_blank" download>下 载 P D F 简 历</a>
+        </p>
+
+        <p class="selfIntroduction" id="siteAbout">
+            马骏康，初级前端开发工程师，青岛科技大学2021年毕业本科生。<br>
+            技能：html5，css3，JavaScript，node.js，vue，react。
+        </p>
     </main>
     <section class="skills" id="siteSkills">
         <h2>技能</h2>
@@ -108,34 +114,38 @@
                 <div class="progressBar">
                     <div class="progress"></div>
                 </div>
-                </li>
+            </li>
             <li>
                 <h3>Javascript</h3>
                 <div class="progressBar">
-                        <div class="progress" style="width:80%"></div>
-                    </div>
+                    <div class="progress" style="width:80%"></div>
+                </div>
             </li>
-            <li><h3>Node.js</Node></h3>
+            <li>
+                <h3>Node.js</Node>
+                </h3>
                 <div class="progressBar">
-                        <div class="progress" style="width:25%"></div>
-                    </div>
-                </li>
+                    <div class="progress" style="width:25%"></div>
+                </div>
+            </li>
             <li>
                 <h3>React.js</h3>
                 <div class="progressBar">
-                        <div class="progress" style="width:70%"></div>
-                    </div>
+                    <div class="progress" style="width:70%"></div>
+                </div>
             </li>
             <li>
                 <h3>Vue.js</h3>
                 <div class="progressBar">
-                        <div class="progress" style="width:30%"></div>
-                    </div></li>
-            <li><h3>HTTP</h3>
+                    <div class="progress" style="width:30%"></div>
+                </div>
+            </li>
+            <li>
+                <h3>HTTP</h3>
                 <div class="progressBar">
-                        <div class="progress"></div>
-                    </div>
-                </li>
+                    <div class="progress"></div>
+                </div>
+            </li>
         </ol>
     </section>
     <section class="portfolio" id="sitePortfolio">
@@ -150,14 +160,14 @@
                 <div class="bar-inner"></div>
             </div>
             <script>
-                portfolio1.onclick=function(){
+                portfolio1.onclick = function () {
                     portfolioBar.className = "bar state-1"
                 }
-                portfolio2.onclick=function(){
-                    portfolioBar.className= "bar state-2"
+                portfolio2.onclick = function () {
+                    portfolioBar.className = "bar state-2"
                 }
-                portfolio3.onclick=function(){
-                    portfolioBar.className="bar state-3"
+                portfolio3.onclick = function () {
+                    portfolioBar.className = "bar state-3"
                 }
             </script>
         </nav>
@@ -166,47 +176,72 @@
                 <img src="./img/1.jpg" alt="作品1" style="height:502px">
             </div>
             <div class="small" style="top:0; left:542px;">
-                    <img src="./img/2.jpg" alt="作品2" style="height:238px; width:252px">
+                <img src="./img/2.jpg" alt="作品2" style="height:238px; width:252px">
 
             </div>
             <div claBss="small" style="top:262px; left:542px;">
-                    <img src="./img/3.jpg" alt="作品3" style="height:238px; width:252px">
+                <img src="./img/3.jpg" alt="作品3" style="height:238px; width:252px">
             </div>
         </div>
     </section>
     <script>
-        setTimeout(function(){
-            siteWelcome.classList.remove('active')},2500
+        setTimeout(function () {
+            siteWelcome.classList.remove('active')
+        }, 2500
         )
-        window.onscroll = function(xxxx){
-            if(window.scrollY > 0 ){
+        window.onscroll = function (xxxx) {
+            if (window.scrollY > 0) {
                 topNavBar.classList.add('sticky')
                 console.log(1)
-            }else{
+            } else {
                 topNavBar.classList.remove('sticky')
             }
         }
         let liTags = document.querySelectorAll('nav > ul > li')
-        for(let i=0;i<liTags.length;i++){
-            liTags[i].onmouseenter = function(x){
-            x.currentTarget.classList.add('active')
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
+                x.currentTarget.classList.add('active')
             }
-            liTags[i].onmouseleave = function(x){
-            x.currentTarget.classList.remove('active')
-          }
+            liTags[i].onmouseleave = function (x) {
+                x.currentTarget.classList.remove('active')
+            }
         }
+
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
         let aTags = document.querySelectorAll('nav > ul > li > a')
-        for(let i=0;i<aTags.length;i++){
-            aTags[i].onclick = function(x){
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
                 x.preventDefault()  /**禁止默认动作**/
                 let a = x.currentTarget
                 let href = a.getAttribute('href') //'#siteAbout'
                 let element = document.querySelector(href)
                 console.log(element)
                 let top = element.offsetTop
-                window.scrollTo(0 , top - 70)
+
+
+                let currentTop = window.scrollY
+                let targetTop = top - 80
+                let s = targetTop - currentTop
+                let t = Math.abs((s / 100) * 2000)
+                if (t > 2000) t = 2000
+                const coords = { y: currentTop }; // Start at (0, 0)
+                const tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
+                    .to({ y: targetTop }, t) // Move to (300, 200) in 1 second.
+                    .easing(TWEEN.Easing.Elastic.Out) // Use an easing function to make the animation smooth.
+                    .onUpdate(() => { // Called after tween.js updates 'coords'.
+                        // Move 'box' to the position described by 'coords' with a CSS translation.
+                        window.scrollTo(0, coords.y)
+                    })
+                    .start();
+
             }
+
         }
     </script>
 </body>
+
 </html>
