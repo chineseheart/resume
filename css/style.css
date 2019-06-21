@@ -2,6 +2,7 @@
 body{margin:0;background:#EFEFEF;}
 ol,ul{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;}
+[data-x].active{outline: 10px red solid}
 .clearfix::after{content: "";display: block;clear:both;}
 .topNavBar-inner{padding: 0px 16px; }
 .topNavBar{padding: 20px 0px;position:fixed;top: 0px;left:0px;width: 100%;transition:all 0.75s;color:rgb(204,206,209)}
@@ -83,3 +84,4 @@ section.portfolio .works .big{position: absolute;}
 .icon {width: 1em; height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
 .site-welcome{background:white;display: none;position:fixed;width:100%;height:100%;top:0;left:0;z-index: 2;justify-content: center;align-items: center;}
 .site-welcome.active{display: flex;}
+
