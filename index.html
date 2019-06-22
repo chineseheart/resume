@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="siteWelcome" class="site-welcome active">
+    <div id="siteWelcome" class="site-welcome">
         <div class="loading"></div>
     </div>
     <!--顶部导航块-->
@@ -25,7 +25,6 @@
             <!--导航条navigation bar-->
             <nav>
                 <ul class="clearfix" ;>
-                    <li><a href="#siteAbout">ABOUT</a></li>
                     <li><a href="#sitePortfolio">PORTFOLIO</a>
                         <ul class='submeau'>
                             <li>作品1</li>
@@ -34,7 +33,10 @@
                         </ul>
                     </li>
                     <li><a href="#siteSkills">SKILLS</a></li>
-                    <li><a href="#siteExperience">EXPERIENCE PRICING</a></li>
+                    <!--<li><a href="#siteExperience">EXPERIENCE PRICING</a></li>-->
+                    <li><a href="#siteAbout">ABOUT</a></li>
+
+                    <li><a href="#siteContact">CONTACT</a></li>
                     <li><a href="#siteBlog">BLOG</a>
                         <ul class="submeau">
                             <li>博客1</li>
@@ -42,8 +44,7 @@
                             <li>博客3</li>
                         </ul>
                     </li>
-                    <li><a href="#siteContact">CONTACT</a></li>
-                    <li><a href="#site">CALENDAR</a></li>
+                    <!--<li><a href="#site">CALENDAR</a></li>-->
                     <li><a href="#siteMe">ME</a></li>
                 </ul>
             </nav>
@@ -84,7 +85,7 @@
                     </dl>
                 </div>
             </div>
-            <footer data-x class="media" id="siteBlog">
+            <footer class="media" id="siteBlog">
                 <a target="_blank" href="https://github.com/chineseheart">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-github"></use>
@@ -185,10 +186,11 @@
         </div>
     </section>
     <script>
-        setTimeout(function () {
-            siteWelcome.classList.remove('active')
-        }, 2500
-        )
+        //setTimeout(function () {
+        //    siteWelcome.classList.remove('active')
+        //}, 100
+        //)
+        start()
         window.onscroll = function (xxxx) {
             if (window.scrollY > 0) {
                 topNavBar.classList.add('sticky')
@@ -196,37 +198,61 @@
             } else {
                 topNavBar.classList.remove('sticky')
             }
-
+            start()
+            let liTags = document.querySelectorAll('nav > ul > li')
+            for (let i = 0; i < liTags.length; i++) {
+                liTags[i].onmouseenter = function (x) {
+                    x.currentTarget.classList.add('active')
+                }
+                liTags[i].onmouseleave = function (x) {
+                    x.currentTarget.classList.remove('active')
+                }
+            }
+        }
+        function start() {
             //关于滚轮部分的代码一定要写在window的onscroll的function里面才能真正监听滚轮
-            console.log('window.scrollY')
-            console.log(window.scrollY)
             let specialTags = document.querySelectorAll('[data-x]')
             let minIndex = 0
-            //遍历找出最近的模块
-            for (let i = 1; i < specialTags.length; i++) {
+            //遍历找出最近的模块,minIndex就是距离窗口顶部最近的序列号
+            for (let i = 0; i < specialTags.length; i++) {
                 if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
                     minIndex = i
                 }
             }
+            //给选中模块加outline
             //遍历清除所有的active
-            for (let i = 0; i < specialTags.length; i++) {
-                specialTags[i].classList.remove('active')
-            }
+            //for (let i = 0; i < specialTags.length; i++) {
+            //    specialTags[i].classList.remove('active')
+            //}
             //遍历给最近的加active
-            specialTags[minIndex].classList.add('active')
+            //specialTags[minIndex].classList.add('active')
+            let id = specialTags[minIndex].id
+            console.log(id)
+            let a = document.querySelector('a[href="#' + id + '"]')
+            let li = a.parentNode
+            console.log(li)
+            let brothersAndMe = li.parentNode.children
+            for (i = 0; i < brothersAndMe.length; i++) {
+                brothersAndMe[i].classList.remove('hignlight')
 
-            console.log('minIndex')
-            console.log(minIndex)
-        }
-        let liTags = document.querySelectorAll('nav > ul > li')
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function (x) {
-                x.currentTarget.classList.add('active')
             }
-            liTags[i].onmouseleave = function (x) {
-                x.currentTarget.classList.remove('active')
-            }
+            li.classList.add('hignlight')
+            console.log(specialTags)
+
+            //模块懒加载类似效果
+            //let specialTags = document.querySelectorAll('[data-x]')
+            //for (i = 0; i < specialTags.length; i++) {
+            //    specialTags[i].classList.remove('offset')
+            //}
+            //for (i = 0; i < specialTags.length; i++) {
+            //    specialTags[i].classList.remove('offset')
+            //}
+            //有了offset之后就不清除了，省的反复抖动。
+            specialTags[minIndex].classList.add('offset')
+
         }
+
+
 
         function animate(time) {
             requestAnimationFrame(animate);

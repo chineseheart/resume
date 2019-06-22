@@ -2,11 +2,10 @@
 body{margin:0;background:#EFEFEF;}
 ol,ul{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;}
-[data-x].active{outline: 10px red solid}
 .clearfix::after{content: "";display: block;clear:both;}
 .topNavBar-inner{padding: 0px 16px; }
 .topNavBar{padding: 20px 0px;position:fixed;top: 0px;left:0px;width: 100%;transition:all 0.75s;color:rgb(204,206,209)}
-.topNavBar.sticky{background: white;padding:10px 0;z-index: 1;box-shadow:0 0 25px rgba(0,0,0,0.75);color:#3d4451}
+.topNavBar.sticky{background: white;padding:5px 0;z-index: 1;box-shadow:0 0 25px rgba(0,0,0,0.75);color:#3d4451}
 .topNavBar .submeau{display: none;}
 .topNavBar .submeau>li{white-space: nowrap;}
 .topNavBar .active .submeau{display: block;position: absolute;left:0px;top:100%;color:#3d4451;background: white;animation:submeauSlide linear 0.3s;box-shadow:4px 4px 5px rgba(0,0,0,0.5);}
@@ -15,21 +14,25 @@ h1,h2,h3,h4,h5,h6{font-weight:normal;}
 .topNavBar nav>ul{list-style:none;margin:0;padding:0;}
 .topNavBar nav>ul>li{float: right;margin-right:17px;margin-left:17px;position: relative;}
 .topNavBar nav>ul>li>a{font-size: 12px;color:inherit;text-decoration: none;font-weight: bold;
-border-top: 3px solid transparent;border-bottom: 3px solid transparent;padding-top:9px;padding-bottom: 6px;display:block;
+border-top: 3px solid transparent;border-bottom: 3px solid transparent;padding-top:6px;padding-bottom: 3px;display:block;
 position:relative}
-.topNavBar nav>ul>li.active>a::after{content:'';display:block;position:absolute;top:100%;left:0;width:100%;
+.topNavBar nav>ul>li.active>a::after,
+.topNavBar nav>ul>li.hignlight>a::after{content:'';display:block;position:absolute;top:100%;left:0;width:100%;font-size:16px;
 background:#E6686A;height:3px;transform: all 0.75s;animation:meauSlide linear 0.3s}
+[data-x].offset{transform: translateY(-40px)}
+[data-x]{transform: translateY(10px);transition:3s}
+
 @keyframes meauSlide{0%{width:0}100%{width:100%}}
 a{text-decoration: none;}
 .logo{float:left;}
-.topNavBar .logo{padding-top:3px;padding-bottom: 4px;font-size:24px;font-family: "Arial Black";}
+.topNavBar .logo{padding-bottom: 1px;font-size:24px;font-family: "Arial Black";}
 .topNavBar .logo .rs{margin-right:4px;color: rgb(230,104,106);}
 .topNavBar .logo .card{color: rgb(154,156,162);}
 .banner{height:512px;background-image:url(../img/rs-cover-2-2-1-1.jpg);background-position: center center;background-size:cover;}
 .banner .mask{height: 512px;background-color:rgba(0,0,0,0.6)}
 .userCard{padding-top:50px;max-width:780px;margin-left:auto;margin-right:auto;
 background:#ffffff;box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);}
-.userCard .pictureAndText{padding:0 50px;}
+.userCard .pictureAndText{padding:0 40px;}
 .userCard .picture{float:left;}
 .userCard .text{padding-left:50px;max-width: 300px;float:left;}
 .userCard .welcome{background:#e6686a;color: #EFEFEF;display: inline-block;padding:5px 5px;position:relative;margin-top:10px;}
@@ -41,7 +44,7 @@ border-left-color:#E6686A;border-top-width:0px;top:100%;left:4px;position:absolu
 .userCard .text>dl>dt{float:left;padding:4px 0;}
 .userCard .text>dl>dd{width:30%;font-weight:blod;}
 .userCard .text>dl>dt{width:70%;color:#9198a8;}
-.userCard footer.media{background: #E6686A;text-align:center;display: block;margin:20px 0;}
+.userCard footer.media{background: #E6686A;text-align:center;display: block;margin-top:20px;margin-bottom:20px}
 .userCard footer.media >a{display: inline-block;border-radius:50%;padding:10px;margin:0 100px;}
 .userCard footer.media >a:hover{background:#cf5d5f}
 .userCard footer.media .icon{width:40px;height:40px;fill:white;}
@@ -59,8 +62,10 @@ section.skills > h2{color: #3d4451;font-size: 34px;line-height: 1.2;font-weight:
 section.skills > ol > li > h3{font-size:14px;color:#757A83;}
 section.skills>ol{box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);max-width:780px;margin-left:auto;margin-right:auto;background: white;}
 section.skills>ol>li{float:left;width:42%;margin:14px 18px;padding-left:15px; }
-.skills .progressBar{height:5px;background: #FAE1E1;margin:5px 0;border-radius:3px;}
-.skills .progressBar> .progress{height:100%;width:40%;background: #E6686A;border-radius:3px;}
+.skills .progressBar{height:5px;background: #FAE1E1;margin:5px 0;border-radius:3px;overflow:hidden}
+.skills .progressBar> .progress{height:100%;width:40%;background: #E6686A;border-radius:3px;transform: translateX(-100%)}
+.skills.offset .progressBar> .progress{height:100%;width:40%;background: #E6686A;border-radius:3px;transform: translateX(0);transition:all 3s;}
+
 section.portfolio{text-align:center;}
 section.portfolio>nav{display: inline-block;vertical-align: top;margin-top:15px;}
 section.portfolio>nav>ol{display: inline-block;vertical-align: top;text-align:center;padding-bottom:20px;}
